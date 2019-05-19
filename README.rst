@@ -6,6 +6,16 @@ running as a service under Microsoft Windows platforms.
 The Nginx version will be downloaded in compilation time from Nginx's official site - http://nginx.org/
 To achieve service behaviour it uses the "Non Sucking Service Manager" - http://nssm.cc/
 
+编译配置
+-------
+配置编译参数：Makefile文件
+
+#配置nginx的版本号
+NGINX_VERSION=1.16.0 
+
+#配置NSSM的版本号
+NSSM_VERSION=2.22 
+
 Usage
 -----
 
