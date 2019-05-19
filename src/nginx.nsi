@@ -31,13 +31,13 @@ Section "Nginx" SEC01
   File "nginx.exe"
   File /r contrib
   File /r conf
-  File /r ssl
+;  File /r ssl
   File /r docs
   File /r html
-  File /r "sites-available"
+  File /r "nginx.conf.d"
   CreateDirectory $INSTDIR\logs
   CreateDirectory $INSTDIR\temp
-  CreateDirectory $INSTDIR\sites-enabled
+;  CreateDirectory $INSTDIR\sites-enabled
 SectionEnd
 
 Section -Post
