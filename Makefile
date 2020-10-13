@@ -1,4 +1,4 @@
-NGINX_VERSION=1.16.0
+NGINX_VERSION=1.19.3
 NSSM_VERSION=2.24
 
 NGINX_LINK=http://nginx.org/download/nginx-$(NGINX_VERSION).zip
@@ -7,7 +7,7 @@ NGINX_PKG=nginx-$(NGINX_VERSION)
 NSSM_LINK=http://nssm.cc/download/nssm-$(NSSM_VERSION).zip
 NSSM_PKG=nssm-$(NSSM_VERSION)
 
-BIN= build/nginx-service.exe
+BIN= build/nginx-service-*.exe
 
 .PHONY: clean all $(BIN)
 
@@ -18,7 +18,7 @@ $(BIN): deps/$(NGINX_PKG)/* deps/$(NSSM_PKG)/*
 	mv tmp/conf/nginx.conf tmp/conf/nginx.conf.orig
 	cp -r etc/* tmp/
 	cd tmp && makensis nginx.nsi
-	mv tmp/nginx-service.exe build/nginx-service.exe
+	mv tmp/nginx-service.exe build/nginx-service-$(NGINX_VERSION).exe
 
 deps/$(NGINX_PKG)/*: deps/$(NGINX_PKG).zip
 	rm -rf deps/$(NGINX_PKG)/
