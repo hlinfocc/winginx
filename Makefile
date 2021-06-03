@@ -1,4 +1,4 @@
-NGINX_VERSION=1.19.9
+NGINX_VERSION=1.20.1
 NSSM_VERSION=2.24
 
 NGINX_LINK=http://nginx.org/download/nginx-$(NGINX_VERSION).zip
