@@ -1,0 +1,56 @@
+Nginx for Windows
+=================
+
+[![GitHub release](https://img.shields.io/github/v/tag/hlinfocc/winginx.svg?label=release)](https://github.com/hlinfocc/winginx/releases)
+[![GitHub release](https://img.shields.io/badge/Download-cf2727)](https://github.com/hlinfocc/winginx/releases)
+
+[中文文档](README.md) | [README](README_EN.md)
+
+
+Nginx for Windows is an installer that set up a Nginx instance
+running as a service under Microsoft Windows platforms. 
+The Nginx version will be downloaded in compilation time from Nginx's official site - http://nginx.org/
+To achieve service behaviour it uses the "Non Sucking Service Manager" - http://nssm.cc/
+
+Usage
+-----
+
+In order to build this script, you must have NSIS installed. Under Debian/Ubuntu:
+
+```
+apt-get install nsis
+```
+Afterwards, just build the NSIS script:
+
+```
+
+$ make
+```
+A binary called ``nginx-service-*.exe`` (* is nginx version)will be created inside the "build" folder and can be installed on
+any Windows 32&64 bits by just double clicking on it.
+
+
+
+New versions
+------------
+
+In order to use newer versions of Nginx or NSSM you have to edit the variables inside the makefile choosing the apropiate version number:
+
+```
+
+ NGINX_VERSION=X.Y.Z
+ NSSM_VERSION=2.16
+```
+
+edit the variables inside the makefile choosing the apropiate version number:
+
+```
+!define PRODUCT_VERSION "X.Y.Z"
+```
+
+The X.Y.Z is Nginx Version
+
+Notice
+--------
+
+The post installation configuration file is located in the conf directory under the installation directory, and the website configuration is located in nginx Conf.d directory
