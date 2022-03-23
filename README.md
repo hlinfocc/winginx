@@ -12,7 +12,6 @@ Nginx 版本会在编译时从 Nginx 官网下载 - http://nginx.org/
 为了实现服务行为，它使用“Non Sucking Service Manager” - http://nssm.cc/ 
 
 ## 如何使用？
----------
 
 本程序依赖需NSIS，要安装NSIS，在Debian/Ubuntu/Deepin下:
 
@@ -36,7 +35,6 @@ $ make
 
 
 ## 修改/升级版本
-------------
 
 为了使用较新的 Nginx 或 NSSM版本，需要编辑 makefile 文件，修改其中的变量，选择适当的版本号： 
 
@@ -56,7 +54,6 @@ X.Y.Z为nginx的版本号
 
 
 ## 注意事项
----------
 
 安装后配置文件位于安装目录下的conf目录，网站配置位于nginx.conf.d目录
 
