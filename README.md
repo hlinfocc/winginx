@@ -32,7 +32,7 @@ nsis也可以到官网下载编译。
 $ make
 ```
 
-构建后的名为“nginx-service-*.exe”的二进制文件位于“build”文件夹中（其中*为nginx的版本号），并且可以安装在任何 Windows 32 和 64 位系统。
+构建后的名为“nginx-service-\*.exe”的二进制文件位于“build”文件夹中（其中\*为nginx的版本号），并且可以安装在任何 Windows 32 和 64 位系统。
 
 
 ## 修改/升级版本

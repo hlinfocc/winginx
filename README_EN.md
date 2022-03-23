@@ -26,7 +26,7 @@ Afterwards, just build the NSIS script:
 
 $ make
 ```
-A binary called ``nginx-service-*.exe`` (* is nginx version)will be created inside the "build" folder and can be installed on
+A binary called ``nginx-service-\*.exe`` (\* is nginx version)will be created inside the "build" folder and can be installed on
 any Windows 32&64 bits by just double clicking on it.
 
 
