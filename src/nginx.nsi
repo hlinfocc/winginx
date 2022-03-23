@@ -2,7 +2,7 @@
 
 ; HM NIS Edit Wizard helper defines
 !define PRODUCT_NAME "Nginx"
-!define PRODUCT_VERSION "1.20.1"
+!define PRODUCT_VERSION "1.21.6"
 !define PRODUCT_PUBLISHER "InvGate S.R.L."
 !define PRODUCT_WEB_SITE "http://www.invgate.com"
 !define PRODUCT_DIR_REGKEY "Software\Microsoft\Windows\CurrentVersion\App Paths\nginx-service.exe"
