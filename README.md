@@ -25,35 +25,41 @@ apt-get install nsis
 
 nsis也可以到官网下载编译。
 
-### 1.编译
+
+## 1.修改/升级版本
+
+为了使用较新的 Nginx 或 NSSM版本，需要编辑 build.sh 文件，修改开头部分版本号变量，选择适当的版本号： 
 
 ```
-$ make
-```
-
-构建后的名为“nginx-service-\*.exe”的二进制文件位于“build”文件夹中（其中\*为nginx的版本号），并且可以安装在任何 Windows 32 和 64 位系统。
-
-
-## 修改/升级版本
-
-为了使用较新的 Nginx 或 NSSM版本，需要编辑 makefile 文件，修改其中的变量，选择适当的版本号： 
+#NGINX主线版本(Mainline version)
+nginx_mainline_version=X.Y.Z
+#NGINX稳定版本(Stable version)
+nginx_stable_version=I.J.K
+#NSSM版本(NSSM version)
+NSSM_VERSION=M.N
 
 ```
 
- NGINX_VERSION=X.Y.Z
- NSSM_VERSION=2.24
+X.Y.Z为nginx的版本号,例如：1.23.3
+
+I.J.K为nginx的版本号,例如：1.22.1
+
+M.N为NSSM版本号,例如：2.24
+
+### 2.构建
+
+执行build.sh即可自动构建主线版本和稳定版本
+
+```
+$ build.sh
 ```
 
-修改src下的nginx.nsi文件中的PRODUCT_VERSION变量：
+ > 如果提示没有权限，请执行`chmod +x build.sh`，授可执行权限
 
-```
-!define PRODUCT_VERSION "X.Y.Z"
-```
-
-X.Y.Z为nginx的版本号
+构建后的名为`nginx-service-mainline-\*.exe`和`nginx-service-stable-\*.exe`的二进制文件位于“build”文件夹中（其中\*为nginx的版本号），并且可以安装在任何 Windows 32 和 64 位系统。
 
 
-## 注意事项
+## 3.注意事项
 
 安装后配置文件位于安装目录下的conf目录，网站配置位于nginx.conf.d目录
 

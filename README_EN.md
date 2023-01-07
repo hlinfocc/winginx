@@ -22,33 +22,37 @@ apt-get install nsis
 ```
 Afterwards, just build the NSIS script:
 
+Execute `build.sh` to automatically build the mainline version and stable version
+
+```
+$ build.sh
 ```
 
-$ make
-```
-A binary called ``nginx-service-\*.exe`` (\* is nginx version)will be created inside the "build" folder and can be installed on
+ > If you are prompted that you do not have permission, please execute `chmod +x build.sh` to grant executable permission
+
+A binary called `nginx-service-mainline-\*.exe` and `nginx-service-stable-\*.exe` (\* is nginx version)will be created inside the "build" folder and can be installed on
 any Windows 32&64 bits by just double clicking on it.
-
 
 
 New versions
 ------------
 
-In order to use newer versions of Nginx or NSSM you have to edit the variables inside the makefile choosing the apropiate version number:
+In order to use a newer version of Nginx or NSSM, you need to edit the `build.sh` file, modify the version number variable at the beginning, and select the appropriate version number:
 
 ```
-
- NGINX_VERSION=X.Y.Z
- NSSM_VERSION=2.16
+#NGINX主线版本(Mainline version)
+nginx_mainline_version=X.Y.Z
+#NGINX稳定版本(Stable version)
+nginx_stable_version=I.J.K
+#NSSM版本(NSSM version)
+NSSM_VERSION=M.N
 ```
 
-edit the variables inside the makefile choosing the apropiate version number:
+The X.Y.Z is Nginx Mainline Version,eg:1.23.3.
 
-```
-!define PRODUCT_VERSION "X.Y.Z"
-```
+The I.J.K is Nginx Stable version,eg:1.22.1.
 
-The X.Y.Z is Nginx Version
+The M.N is NSSM Version,eg: 2.24.
 
 Notice
 --------
