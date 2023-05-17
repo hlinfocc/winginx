@@ -66,6 +66,7 @@ makeMainlineVersion()
     if [ -f "build/nginx-service-${nginx_mainline_version}.exe" ];then
         echo "cp ./build/nginx-service-${nginx_mainline_version}.exe ./build/nginx-service-mainline-${nginx_mainline_version}.exe"
         \cp ./build/nginx-service-${nginx_mainline_version}.exe ./build/nginx-service-mainline-${nginx_mainline_version}.exe
+        \cp ./build/nginx-service-${nginx_mainline_version}.exe ./dist/nginx-service-mainline-${nginx_mainline_version}.exe
         EchoCN "EchoBlue" "mainline版本[${nginx_mainline_version}]制作成功!" "The mainline version [${nginx_mainline_version}] was created successfully!"
     fi
 }
@@ -78,9 +79,24 @@ makeStableVersion()
     if [ -f "build/nginx-service-${nginx_stable_version}.exe" ];then
         echo "cp ./build/nginx-service-${nginx_stable_version}.exe ./build/nginx-service-stable-${nginx_stable_version}.exe"
         \cp ./build/nginx-service-${nginx_stable_version}.exe ./build/nginx-service-stable-${nginx_stable_version}.exe
+        \cp ./build/nginx-service-${nginx_stable_version}.exe ./dist/nginx-service-stable-${nginx_stable_version}.exe
         EchoCN "EchoBlue" "stable版本[${nginx_stable_version}]制作成功!" "The stable version [${nginx_stable_version}] was created successfully!"
     fi
 }
+cleanOldVersion(){
+    buildqty=$(ls ./build/ |grep ".exe" |wc -l)
+    if [ $buildqty -gt 0 ];then
+        EchoCN "EchoBlue" "清除build目录下的旧版本版本!" "Clear the old version for build!"
+        \rm -rf ./build/nginx-*.exe
+    fi
+    distqty=$(ls ./dist/ |grep ".exe" |wc -l)
+    if [ $distqty -gt 0 ];then
+        EchoCN "EchoBlue" "清除dist目录下的旧版本版本!" "Clear the old version for dist!"
+        \rm -rf ./dist/nginx-*.exe
+    fi
+}
+
+cleanOldVersion
 
 makeStableVersion
 
