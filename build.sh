@@ -1,9 +1,9 @@
 #!/bin/bash
 
 #NGINX主线版本(Mainline version)
-nginx_mainline_version=1.23.3
+nginx_mainline_version=1.23.4
 #NGINX稳定版本(Stable version)
-nginx_stable_version=1.22.1
+nginx_stable_version=1.24.0
 #NSSM版本(NSSM version)
 NSSM_VERSION=2.24
 
